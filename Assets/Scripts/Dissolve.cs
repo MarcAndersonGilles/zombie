@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Dissolve : MonoBehaviour
 {
+    public Material Dissolvematerial;
+    public string PropertyName;
+    public float LowValue = 0;
+    public float HighValue = 5;
+    private float DissolveSpeed = 0.005f;
+    private float MixValue = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Dissolvematerial.SetFloat(PropertyName, MixValue);
+        MixValue += DissolveSpeed;
+
     }
 }

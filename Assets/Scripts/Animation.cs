@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Animation : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -11,17 +12,9 @@ public class Animation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-       
-        /*if (GetComponent<Rigidbody>().velocity.magnitude > 1f)
-        {
-            GetComponent<Animator>().SetBool("walk", true);
-        }
-        else
-        {
-            GetComponent<Animator>().SetBool("walk", false);
-        }*/
+
     }
 
     void OnCollisionEnter(Collision collison)
