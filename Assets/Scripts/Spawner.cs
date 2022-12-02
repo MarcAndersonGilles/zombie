@@ -15,9 +15,12 @@ public class Spawner : MonoBehaviour
 
     IEnumerator ZombieSpawner()
     {
+        if(GameObject.FindWithTag("timer").GetComponent<TimerScript>().TimeLeft > 10)
+        {
             int randomNumber = Mathf.RoundToInt(Random.Range(0f, spawnPoint.Length-1));
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(7f);
             Instantiate(zombie, spawnPoint[randomNumber].transform.position, transform.rotation);
             StartCoroutine(ZombieSpawner());
+        }
     }
 }

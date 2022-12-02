@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class ZombieGirlSpawner : MonoBehaviour
 {
-    public Transform zombie;
+    public Transform[] spawnPoint;
+    public GameObject zombie;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(ZombieSpawner2());
+        StartCoroutine(ZombieSpawner());
     }
 
-    IEnumerator ZombieSpawner2()
+    IEnumerator ZombieSpawner()
     {
-            yield return new WaitForSeconds(5f);
-            Instantiate(zombie, transform.position, transform.rotation);
-            StartCoroutine(ZombieSpawner2());
+        if(GameObject.FindWithTag("timer").GetComponent<TimerScript>().TimeLeft > 10)
+        {
+            int randomNumber = Mathf.RoundToInt(Random.Range(0f, spawnPoint.Length-1));
+            yield return new WaitForSeconds(10f);
+            Instantiate(zombie, spawnPoint[randomNumber].transform.position, transform.rotation);
+            StartCoroutine(ZombieSpawner());
+        }
     }
 }
