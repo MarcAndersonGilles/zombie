@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+
+
 public class TypingArea : MonoBehaviour
 {
     public GameObject leftHand;
@@ -11,7 +12,32 @@ public class TypingArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-     //   GameObject hand = other.GetComponentInParent<OVRGrabber>().gameObject;
+        GameObject hand = other.GetComponentInParent<ControleMains>().gameObject;
+        if (hand == null) return;
+        if (hand == leftHand)
+        {
+            leftTypingHand.SetActive(true);
+        }
+        else if (hand == rightHand)
+        {
+            rightTypingHand.SetActive(true);
+        }
+       
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        GameObject hand = other.GetComponentInParent<ControleMains>().gameObject;
+        if (hand == null) return;
+        if (hand == leftHand)
+        {
+            leftTypingHand.SetActive(false);
+        }
+        else if (hand == rightHand)
+        {
+            rightTypingHand.SetActive(false);
+        }
+
     }
 
 }

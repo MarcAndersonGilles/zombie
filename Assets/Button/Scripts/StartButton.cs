@@ -1,15 +1,10 @@
-/**************************************************
-Copyright : Copyright (c) RealaryVR. All rights reserved.
-Description: Script for VR Button functionality.
-***************************************************/
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class ButtonVR : MonoBehaviour
+public class StartButton : MonoBehaviour
 {
     public GameObject button;
     public UnityEvent onPress;
@@ -33,7 +28,7 @@ public class ButtonVR : MonoBehaviour
             onPress.Invoke();
             sound.Play();
             isPressed = true;
-            
+
         }
     }
 
@@ -44,7 +39,7 @@ public class ButtonVR : MonoBehaviour
             button.transform.localPosition = new Vector3(0, 0.015f, 0);
             onRelease.Invoke();
             isPressed = false;
-           
+            SceneManager.LoadScene("sceneGunTest");
         }
     }
 
@@ -55,6 +50,8 @@ public class ButtonVR : MonoBehaviour
         sphere.transform.localPosition = new Vector3(0, 1, 2);
         sphere.AddComponent<Rigidbody>();
     }
-
-    
+    public void StartBtn()
+    {
+        SceneManager.LoadScene("sceneGunTest");
+    }
 }
