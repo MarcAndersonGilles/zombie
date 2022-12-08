@@ -35,7 +35,7 @@ public class Afficheur : MonoBehaviour
     {
         if (target == null)
         {
-           // Destroy(this.gameObject);
+            Destroy(this.gameObject);
             return;
         }
         if (sliderJoueur != null)

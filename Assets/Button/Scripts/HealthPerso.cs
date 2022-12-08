@@ -40,7 +40,7 @@ public class HealthPerso : MonoBehaviour
         currentHealth -= amount;
         if(currentHealth < 0)
         {// death
-
+            Destroy(gameObject);
         }
     } 
  }
