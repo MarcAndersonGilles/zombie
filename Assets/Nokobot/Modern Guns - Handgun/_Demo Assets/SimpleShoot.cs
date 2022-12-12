@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [AddComponentMenu("Nokobot/Modern Guns/Simple Shoot")]
@@ -9,6 +10,8 @@ public class SimpleShoot : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject casingPrefab;
     public GameObject muzzleFlashPrefab;
+    public HealthPerso script;
+
 
     [Header("Location Refrences")]
     [SerializeField] private Animator gunAnimator;
@@ -16,9 +19,9 @@ public class SimpleShoot : MonoBehaviour
     [SerializeField] private Transform casingExitLocation;
 
     [Header("Settings")]
-    [Tooltip("Specify time to destory the casing object")] [SerializeField] private float destroyTimer = 2f;
-    [Tooltip("Bullet Speed")] [SerializeField] private float shotPower = 500f;
-    [Tooltip("Casing Ejection Speed")] [SerializeField] private float ejectPower = 150f;
+    [Tooltip("Specify time to destory the casing object")][SerializeField] private float destroyTimer = 2f;
+    [Tooltip("Bullet Speed")][SerializeField] private float shotPower = 500f;
+    [Tooltip("Casing Ejection Speed")][SerializeField] private float ejectPower = 150f;
 
     public AudioSource source;
     public AudioClip fireSound;
@@ -81,4 +84,18 @@ public class SimpleShoot : MonoBehaviour
         Destroy(tempCasing, destroyTimer);
     }
 
-}
+    void OnTriggerEnter(Collider hit)
+    {
+        if (hit.gameObject.tag == "Enemy")
+        {
+            hit.GetComponent<HealthPerso>().currentHealth -= 20;
+            Destroy(this.gameObject);
+        }
+        else if (script.currentHealth < 0)
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
+    } 
+ 

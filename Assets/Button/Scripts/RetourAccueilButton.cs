@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class RetourAccueilButton : MonoBehaviour
 {
     public GameObject button;
     public UnityEvent onPress;
@@ -39,7 +39,7 @@ public class StartButton : MonoBehaviour
             button.transform.localPosition = new Vector3(0, 0.015f, 0);
             onRelease.Invoke();
             isPressed = false;
-            SceneManager.LoadScene("sceneGunTest");
+            SceneManager.LoadScene("sceneConnexionTest");
         }
     }
 
@@ -49,10 +49,6 @@ public class StartButton : MonoBehaviour
         sphere.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         sphere.transform.localPosition = new Vector3(0, 1, 2);
         sphere.AddComponent<Rigidbody>();
-    }
-    public void StartBtn()
-    {
-        SceneManager.LoadScene("sceneGunTest");
     }
     public void RetourAccueilBtn()
     {

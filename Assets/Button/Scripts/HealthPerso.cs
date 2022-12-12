@@ -35,6 +35,7 @@ public class HealthPerso : MonoBehaviour
         }
         this.Health -= .1f * Time.deltaTime;
     }
+    
     void TakeDamage(int amount)
     {
         currentHealth -= amount;
