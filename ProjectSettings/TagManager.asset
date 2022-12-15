@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - timer
+  - Enemy
+  - bullet
   layers:
   - Default
   - TransparentFX
@@ -13,11 +15,11 @@ TagManager:
   - Water
   - UI
   - ObjetSaisi
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Hands
+  - Interactive
+  - TypingHands
+  - Keyboard
+  - InvisiblePourCam
   - 
   - 
   - 
