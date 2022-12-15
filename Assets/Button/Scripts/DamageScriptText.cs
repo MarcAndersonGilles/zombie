@@ -7,7 +7,7 @@ public class DamageScriptText : MonoBehaviour
 {
     public Text text;
     public float lifeTime = 0.6f;
-    private float minDist = 2f;
+    public float minDist = 2f;
     public float maxDist = 3f;
 
     private Vector3 iniPos;
@@ -39,7 +39,7 @@ public class DamageScriptText : MonoBehaviour
         
 
 
-            transform.position = Vector3.Lerp(iniPos, targetPos, Mathf.Sin(timer/ lifeTime));
+        transform.position = Vector3.Lerp(iniPos, targetPos, Mathf.Sin(timer/ lifeTime));
         transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, Mathf.Sin(timer/ lifeTime));
     }
 

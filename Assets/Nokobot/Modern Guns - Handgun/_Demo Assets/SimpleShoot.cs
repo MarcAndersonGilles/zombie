@@ -10,7 +10,7 @@ public class SimpleShoot : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject casingPrefab;
     public GameObject muzzleFlashPrefab;
-    public HealthPerso script;
+    
 
 
     [Header("Location Refrences")]
@@ -26,14 +26,20 @@ public class SimpleShoot : MonoBehaviour
     public AudioSource source;
     public AudioClip fireSound;
 
+    public GameObject enemyObject;
+ 
+    public Damagable ScriptDamagable;
 
     void Start()
     {
+        
+        enemyObject = GameObject.FindWithTag("Enemy");
         if (barrelLocation == null)
             barrelLocation = transform;
 
         if (gunAnimator == null)
             gunAnimator = GetComponentInChildren<Animator>();
+        
     }
 
     public void PullTheTrigger()
@@ -84,18 +90,8 @@ public class SimpleShoot : MonoBehaviour
         Destroy(tempCasing, destroyTimer);
     }
 
-    void OnTriggerEnter(Collider hit)
-    {
-        if (hit.gameObject.tag == "Enemy")
-        {
-            hit.GetComponent<HealthPerso>().currentHealth -= 20;
-            Destroy(this.gameObject);
-        }
-        else if (script.currentHealth < 0)
-        {
-            Destroy(this.gameObject);
-        }
-
-    }
-    } 
+    
+    
+    
+} 
  

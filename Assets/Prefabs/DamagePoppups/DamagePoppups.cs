@@ -5,13 +5,19 @@ using TMPro;
 
 public class DamagePoppups : MonoBehaviour
 {
-    private TextMeshPro textMesh;
-    private void Awake()
+    // Référence à l'objet de texte qui sera utilisé pour afficher les popups
+    public GameObject damageTextPrefab;
+
+    // Fonction appelée lorsqu'un ennemi subit des dégâts
+    public void ShowDamagePopup(int damage)
     {
-        textMesh = transform.GetComponent<TextMeshPro>();
-    }
-    public void Setup(int damageAmount)
-    {
-        textMesh.SetText(damageAmount.ToString());
+        // Instancie un nouvel objet de texte pour afficher les dégâts
+        GameObject damageText = Instantiate(damageTextPrefab, transform.position, Quaternion.identity);
+
+        // Définit le texte de l'objet pour afficher les dégâts
+        damageText.GetComponent<TextMesh>().text = damage.ToString();
+
+        // Déplace l'objet de texte vers le haut de l'écran pour créer l'effet de popup
+        damageText.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 5);
     }
 }
