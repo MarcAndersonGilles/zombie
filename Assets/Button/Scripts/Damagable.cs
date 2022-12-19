@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -12,8 +13,14 @@ public class Damagable : MonoBehaviour
     public GameObject damageTextPrefab;
     public int health = 0;
     public Slider slider;
+    public Animator animtor;
     public GameObject enemyObject;
-
+    public List<GameObject> enemyObjects;
+    public bool enemyIsDead = false;
+    public GameObject enemyHealthBarInvisible;
+    public GameObject enemyCorpsInvisible;
+    public float inactiveDuration = 2f;
+    public float activeDuration = 2f;
     public int Health
     {
         get { return health; }
@@ -33,6 +40,11 @@ public class Damagable : MonoBehaviour
             Health = MaxHealth;
             slider.value = health;
         }
+        enemyIsDead = false;
+        GetComponent<Dissolve>().enabled = false;
+        enemyHealthBarInvisible.SetActive(true);
+        enemyCorpsInvisible.SetActive(true);
+        InvokeRepeating("InactiveEnemy", activeDuration, activeDuration + inactiveDuration);
         health = MaxHealth;
     }
 
@@ -42,7 +54,43 @@ public class Damagable : MonoBehaviour
         health -= damagePoints;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            GetComponent<AiController>().enabled = false;
+            GetComponent<Animator>().SetBool("death", true);
+            Destroy(gameObject, 2f);
+        }
+        else
+        {
+            slider.value = health;
+            DamageScriptText indicator = Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageScriptText>();
+            indicator.SetDamageText(damagePoints);
+        }
+        slider.value = health;
+    }
+    public void Hit2(int damagePoints)
+    {
+        health -= damagePoints;
+        if (health <= 0)
+        {
+            Invoke("LoadSceneMort", 2f);
+        }
+        else
+        {
+            slider.value = health;
+            DamageScriptText indicator = Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageScriptText>();
+            indicator.SetDamageText(damagePoints);
+        }
+        slider.value = health;
+    }
+    public void HitBoss(int damagePoints)
+    {
+        health -= damagePoints;
+        if (health <= 0)
+        {
+            Debug.Log("Scene appele");
+            GetComponent<Animator>().SetBool("death", true);
+            GetComponent<Dissolve>().enabled = true;
+            
+            Invoke("LoadSceneVictoire", 3f);
         }
         else
         {
@@ -81,20 +129,64 @@ public class Damagable : MonoBehaviour
         {
             // Affiche le nom de l'objet en collision dans la console
             Debug.Log("Collision detected with object: " + collision.gameObject.name);
-            Hit(5);
+            Hit(15);
+        }
+        if (gameObject.tag == "Hero" && collision.gameObject.tag == "Enemy")
+        {
+            Hit2(15);
             
+        }
+        if (gameObject.tag == "Boss" && collision.gameObject.tag == "bullet")
+        {
+            HitBoss(15);
 
         }
-            
+
     }
 
 
 void Update()
     {
+        enemyIsDead = true;
         if (health > MaxHealth)
         {
             health = MaxHealth;
         }
-       
+        foreach (GameObject enemy in enemyObjects)
+        {
+            if (enemy != null)
+            {
+                enemyIsDead = false;
+                break;
+            }
+        }
+        if (enemyIsDead)
+        {
+            //Invoke("sceneVictoire", 5f);
+        }
+
+
+
+    }
+    void ReappearEnemy()
+    {
+        enemyCorpsInvisible.SetActive(true);
+        enemyHealthBarInvisible.SetActive(true);
+    }
+    void InactiveEnemy()
+    {
+        enemyCorpsInvisible.SetActive(false);
+        enemyHealthBarInvisible.SetActive(false);
+        Invoke("ReappearEnemy", inactiveDuration);
+    }
+    void LoadSceneVictoire()
+    {
+        // Load the specified scene
+        SceneManager.LoadScene("sceneVictoire");
+    }
+    void LoadSceneMort()
+    {
+        // Load the specified scene
+        SceneManager.LoadScene("sceneMort");
     }
 }

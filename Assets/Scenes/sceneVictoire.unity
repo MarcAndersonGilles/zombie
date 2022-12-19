@@ -634,7 +634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119322982}
   m_LocalRotation: {x: -0.12749703, y: -0, z: -0, w: 0.991839}
-  m_LocalPosition: {x: -0.281, y: 0.548, z: 0.013}
+  m_LocalPosition: {x: -0.001, y: 0.565, z: -0.342}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -982,12 +982,12 @@ GameObject:
   - component: {fileID: 223899920}
   - component: {fileID: 223899921}
   m_Layer: 10
-  m_Name: ButtonStart (1)
+  m_Name: ButtonAccueil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &223899920
 Transform:
   m_ObjectHideFlags: 0
@@ -2298,9 +2298,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "         BRAVO !!! Tu as gagn\xE9 :)\n\n Appuie sur un des boutons pour\n
-    recommencer ou revenir \xE0 la scene\n d'accueil. Merci d'avoir essayer notre
-    exp\xE9rience en VR."
+  m_text: "         BRAVO !!! Tu as gagn\xE9 :)\n\nMerci d'avoir essayer notre exp\xE9rience
+    en VR. Si tu veux recommencer appuie sur le bouton."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2309,8 +2308,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278320931
+  m_fontColor: {r: 0.136453, g: 1, b: 0.0037735105, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2480,7 +2479,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 1cbc70c92bc1e484cb444103c4cb836f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3211,7 +3210,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 013bbc6d8eff9084f92e854854975fd1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3458,7 +3457,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 1cbc70c92bc1e484cb444103c4cb836f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5563,7 +5562,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ac61b207ea01f2249a932fc733569185, type: 2}
+  - {fileID: 2100000, guid: 1cbc70c92bc1e484cb444103c4cb836f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

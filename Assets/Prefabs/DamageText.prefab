@@ -181,7 +181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5
+  m_Text: '15 '
 --- !u!114 &8694812058793970852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,5 +196,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 8694812058793970854}
   lifeTime: 1.5
-  minDist: 2
-  maxDist: 3
+  minDist: 0.5
+  maxDist: 2

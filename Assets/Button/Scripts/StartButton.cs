@@ -39,8 +39,9 @@ public class StartButton : MonoBehaviour
             button.transform.localPosition = new Vector3(0, 0.015f, 0);
             onRelease.Invoke();
             isPressed = false;
-            SceneManager.LoadScene("sceneGunTest");
+            SceneManager.LoadScene("niveau1");
         }
+        
     }
 
     public void SpawnSphere()
@@ -52,7 +53,7 @@ public class StartButton : MonoBehaviour
     }
     public void StartBtn()
     {
-        SceneManager.LoadScene("sceneGunTest");
+        SceneManager.LoadScene("niveau1");
     }
     public void RetourAccueilBtn()
     {

@@ -17,7 +17,7 @@ public class Keyboard : MonoBehaviour
 
     public void InsertChar(string c)
     {
-        inputField.text = c;
+        inputField.text += c;
     }
     public void DeleteChar()
     {
@@ -28,7 +28,7 @@ public class Keyboard : MonoBehaviour
     }
     public void InsertSpace()
     {
-        inputField.text = " ";
+        inputField.text += " ";
     }
     public void CapsPressed()
     {
