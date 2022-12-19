@@ -4556,7 +4556,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7767,11 +7767,11 @@ GameObject:
   - component: {fileID: 1056304791}
   m_Layer: 0
   m_Name: Dissolve
-  m_TagString: Untagged
+  m_TagString: Dissolve
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1056304791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12917,6 +12917,10 @@ MonoBehaviour:
   TimerOn: 0
   TimerTxt: {fileID: 0}
   Boss: {fileID: 2126515321}
+  Dissolvematerial: {fileID: 2100000, guid: 187d21ecff7aa514eb79aa51a9825515, type: 2}
+  PropertyName: _Cuttoff_height
+  LowValue: 0
+  HighValue: 5
 --- !u!4 &1818356418
 Transform:
   m_ObjectHideFlags: 0
@@ -13170,7 +13174,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -14.9}
   m_SizeDelta: {x: -20, y: 29.8}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14693,7 +14697,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 01dc8f782697e4840a556162f1c5bcdd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 01dc8f782697e4840a556162f1c5bcdd,
         type: 3}

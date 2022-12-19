@@ -12,7 +12,7 @@ public class Dissolve : MonoBehaviour
     private float MixValue = 0;
 
     // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
         MixValue = 0;
     }
@@ -23,4 +23,9 @@ public class Dissolve : MonoBehaviour
         MixValue += DissolveSpeed;
 
     }
+
+    /*public void startDissolve()
+    {
+        MixValue = 0;
+    }*/
 }

@@ -108,7 +108,7 @@ public class Damagable : MonoBehaviour
     }
      public void ShowDamagePopup(int damagePoints)
     {
-        // Créer un GameObject pour afficher le texte du pop-up
+        // Crï¿½er un GameObject pour afficher le texte du pop-up
         var popup = new GameObject("DamagePopup");
         popup.transform.position = transform.position;
 
@@ -116,7 +116,7 @@ public class Damagable : MonoBehaviour
         var text = popup.AddComponent<Text>();
         text.text = damagePoints.ToString();
 
-        // Ajouter un composant pour faire disparaître le pop-up au bout de quelques secondes
+        // Ajouter un composant pour faire disparaï¿½tre le pop-up au bout de quelques secondes
         var destroyTimer = popup.AddComponent<DestroyTimer>();
         destroyTimer.Lifetime = 2.0f;
     }

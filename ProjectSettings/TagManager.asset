@@ -11,6 +11,7 @@ TagManager:
   - Boss
   - ButtonStart
   - ButtonAccueil
+  - Dissolve
   layers:
   - Default
   - TransparentFX

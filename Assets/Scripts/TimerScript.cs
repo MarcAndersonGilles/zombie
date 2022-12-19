@@ -11,15 +11,34 @@ public class TimerScript : MonoBehaviour
 
     public GameObject Boss;
 
+    public Material Dissolvematerial;
+    public string PropertyName;
+    public float LowValue = 0;
+    public float HighValue = 5;
+    private float DissolveSpeed = 0.03f;
+    private float MixValue = 0;
+
+    //Dissolve dissolve;
+
     // Start is called before the first frame update
     void Start()
     {
         TimerOn = true;
+
+        //dissolve = GameObject.FindGameObjectWithTag("Dissolve").GetComponent<Dissolve>();
+        //dissolve.startDissolve();
+    }
+
+    public void Awake()
+    {
+        MixValue = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Dissolvematerial.SetFloat(PropertyName, MixValue);
+
         if(TimerOn)
         {
             if(TimeLeft > 0)
