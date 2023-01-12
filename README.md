@@ -2,7 +2,6 @@
 Marc & Vincent
 Projet exploration VR
 :)
-
 Concept de jeu 
 
 Le jeu commencera avec le premier niveau où le joueur aura à sa disposition des armes qu’il utilisera afin d’éliminer des vagues de zombie avant qu’ils puissent se rendre au joueur. Le premier niveau ne serait pas trop complexe et il contiendrait juste des zombies avec un simple Ai qui pourront être éliminé avec les armes disponible (aussi pas très complexe donc probablement pas de système de rechargement des armes). Le joueur devra survivre pour environ 1 minutes avant d’être envoyé dans le deuxième niveau. Pour le deuxième niveau, le joueur sera présenté avec plus d’ennemies à éliminer et certains d’entre eux, seront aussi plus complexe. Par exemple, certains zombies seront invisibles au début et apparenteront après quelques secondes. Il y aura aussi d’autres zombies qui seront plus rapide que les autres et seront identifiable par le fait qu’ils brillent. Si on a le temps, on pourrait aussi avoir un boss final avec plus de vie que les autres zombies  
@@ -64,7 +63,7 @@ Marc-Anderson Gilles
 
  
 
--Faire une Scene de connexion avec le nom du joueur 
+-Faire une Scene de connexion, mort, victoire avec le nom du joueur 
 
 
 -Miroirs
